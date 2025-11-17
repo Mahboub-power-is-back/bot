@@ -3,7 +3,7 @@ import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 
-BOT_TOKEN = 7545343348:AAHfc2_7YkF_gETziR_aBUV0vvky04N1pPY  # Get token from GitHub Secret
+BOT_TOKEN = "7545343348:AAHfc2_7YkF_gETziR_aBUV0vvky04N1pPY"  # Get token from GitHub Secret
 ADMIN_USERNAME = "@your_admin"
 CHANNEL = "@your_channel"
 
