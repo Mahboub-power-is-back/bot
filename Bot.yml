@@ -1,0 +1,29 @@
+name: Telegram VPN Bot
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/10 * * * *"   # auto-restart every 10 minutes
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install python-telegram-bot==20.0
+
+      - name: Run bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          python bot.py
